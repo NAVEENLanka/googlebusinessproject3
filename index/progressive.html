@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Web App Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .service-header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .order-form {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #ff00cc, #3333ff, #33cc33, #ffcc00);
+            background-size: 300% 300%;
+            animation: gradientBG 5s infinite alternate-reverse;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        /* Animation for the Submit Order button */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .form-group button.animated {
+            animation: pulse 1s infinite;
+        }
+    </style>
+</head>
+<body>
+
+<div class="service-header">
+    <h1>Progressive Web App Development</h1>
+    <img src="progressive web app development.avif" alt="Single Page Application development" width="400">
+    <p>Starting at <strong>$1500</strong></p>
+</div>
+
+<div class="order-form">
+    <h2>Place Your Order</h2>
+    <form action="submit_order.php" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="service">Service Type:</label>
+            <select id="service" name="service" required>
+                <option value="basic">Progressive Web application development - $1500</option>
+                <option value="advanced">Advanced Progressive Web application development - $4000</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="contact">Your Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
+            <button type="button" onclick="generateOTP()">Generate OTP</button>
+        </div>
+        <div class="form-group">
+            <label for="country">Your Country:</label>
+            <select id="country" name="country" required>
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value="germany">Germany</option>
+                <option value="france">France</option>
+                <option value="italy">Italy</option>
+                <option value="spain">Spain</option>
+                <option value="japan">Japan</option>
+                <option value="china">China</option>
+                <option value="brazil">Brazil</option>
+                <option value="russia">Russia</option>
+                <option value="southafrica">South Africa</option>
+                <option value="mexico">Mexico</option>
+                <option value="argentina">Argentina</option>
+                <option value="southkorea">South Korea</option>
+                <option value="uae">UAE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="attachment">File Attachment (*optional):</label>
+            <input type="file" id="attachment" name="attachment">
+            <p>If you want to upload a file, video, or audio, please attach it here.</p>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="animated">Submit Order</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function generateOTP() {
+        // Generate a random 10-digit mobile number with OTP
+        const randomMobileNumber = Math.floor(1000000000 + Math.random() * 9000000000);
+        document.getElementById('contact').value = randomMobileNumber;
+    }
+</script>
+
+</body>
+</html>

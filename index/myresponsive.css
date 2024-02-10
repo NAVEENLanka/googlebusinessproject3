@@ -1,0 +1,49 @@
+/* Mobile and Small Devices (width up to 600px) */
+@media only screen and (max-width: 600px) {
+    .card-item {
+        margin: 5px 0;
+        padding: 8px;
+    }
+
+    .pimg {
+        width: 100%; /* Make image responsive */
+        height: auto;
+    }
+
+    .animated-button {
+        padding: 8px 15px; /* Slightly smaller padding for buttons */
+        font-size: 14px; /* Smaller font size for button text */
+    }
+
+    .lines .line1, .lines .line2, .lines .line3 {
+        font-size: 14px; /* Smaller font size for text lines */
+    }
+}
+
+/* Tablets and Medium Devices (width from 601px to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .card-item {
+        margin: 8px 0;
+        padding: 10px;
+    }
+
+    .pimg {
+        width: 100%; /* Make image responsive */
+        height: auto;
+    }
+
+    .animated-button {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    .lines .line1, .lines .line2, .lines .line3 {
+        font-size: 15px;
+    }
+}
+
+/* Larger Devices (width more than 768px) */
+@media only screen and (min-width: 769px) {
+    /* Styles for larger screens if needed */
+    /* This section can be left empty if the default styles (mystyle.css) work well for larger screens */
+}
